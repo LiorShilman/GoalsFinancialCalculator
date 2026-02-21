@@ -167,7 +167,7 @@ export function applyOptimization(result, mode, settings, goalsRaw) {
 
   if (!result.feasible) {
     resultsEl.style.display = 'block';
-    currentEl.innerHTML = `<p>❌ אין אפשרות לעמוד בכל היעדים עם התקציב הנוכחי.</p>`;
+    currentEl.innerHTML = `<p><i data-lucide="x-circle"></i> אין אפשרות לעמוד בכל היעדים עם התקציב הנוכחי.</p>`;
     benefitsEl.innerHTML =
       `<p>דרוש תוספת של ${Money.format(result.shortfall)} ₪ לפחות, או התאמת מועדים/תשואות.</p>`;
     badgesEl.innerHTML = `<span class="badge bg-danger">חסר תקציב</span>`;

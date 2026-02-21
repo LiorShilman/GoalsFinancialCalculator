@@ -478,7 +478,7 @@ _fetchById(id) {
       const header = `
         <div class="bon-toolbar">
           <h4>בונוסים</h4>
-          <button type="button" class="bon-add-btn" data-action="add"><span>➕</span><span>הוסף בונוס</span></button>
+          <button type="button" class="bon-add-btn" data-action="add"><span><i data-lucide="plus-circle"></i></span><span>הוסף בונוס</span></button>
         </div>
       `;
 

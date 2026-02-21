@@ -204,7 +204,7 @@ export const UIGoalsRichList = {
     if (!Array.isArray(goals) || goals.length === 0) {
       el.innerHTML = `
         <div class="empty-state animate-in">
-          <div class="empty-state-icon">📋</div>
+          <div class="empty-state-icon"><i data-lucide="clipboard-list"></i></div>
           <div class="empty-state-text">טרם הוגדרו מטרות — הוסיפו את המטרה הראשונה</div>
         </div>
       `;
@@ -342,8 +342,8 @@ export const UIGoalsRichList = {
       // כפתורי פעולה — בלי onclick, עם data-*
       const actions = `
         <div style="text-align:left;margin-top:20px;">
-          <button class="btn btn-secondary interactive" data-action="edit" data-goal-id="${goal.id}" title="עריכת מטרה">✏️ ערוך</button>
-          <button class="btn btn-danger interactive" data-action="delete" data-goal-id="${goal.id}" title="מחיקת מטרה">🗑️ מחק</button>
+          <button class="btn btn-secondary interactive" data-action="edit" data-goal-id="${goal.id}" title="עריכת מטרה"><i data-lucide="pencil"></i> ערוך</button>
+          <button class="btn btn-danger interactive" data-action="delete" data-goal-id="${goal.id}" title="מחיקת מטרה"><i data-lucide="trash-2"></i> מחק</button>
         </div>`;
 
       return `

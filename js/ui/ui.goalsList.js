@@ -54,7 +54,7 @@ export const UIGoalsList = {
     if (!goals?.length) {
       el.innerHTML = `
         <div class="empty-state animate-in">
-          <div class="empty-state-icon">📋</div>
+          <div class="empty-state-icon"><i data-lucide="clipboard-list"></i></div>
           <div class="empty-state-text">טרם הוגדרו מטרות — הוסיפו את המטרה הראשונה</div>
         </div>`;
       return;
@@ -142,8 +142,8 @@ export const UIGoalsList = {
       // כפתורי פעולה
       const actions = `
         <div style="text-align:left;margin-top:16px">
-          <button class="btn btn-secondary" data-action="edit" data-goal-id="${goal.id}">✏️ ערוך</button>
-          <button class="btn btn-danger"    data-action="delete" data-goal-id="${goal.id}">🗑️ מחק</button>
+          <button class="btn btn-secondary" data-action="edit" data-goal-id="${goal.id}"><i data-lucide="pencil"></i> ערוך</button>
+          <button class="btn btn-danger"    data-action="delete" data-goal-id="${goal.id}"><i data-lucide="trash-2"></i> מחק</button>
         </div>`;
 
       return `

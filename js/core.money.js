@@ -8,11 +8,14 @@ export const Money = {
 
   // פורמט להצגה רשמית עם ₪ (ל־UI תצוגתי, לא למסכת קלט חיה)
   format(n) {
-    return (Number(n) || 0).toLocaleString('he-IL', {
+    const val = Number(n) || 0;
+    const formatted = val.toLocaleString('he-IL', {
       style: 'currency',
       currency: 'ILS',
       maximumFractionDigits: 0
     });
+    // LRM (\u200E) ensures minus sign stays on the left in RTL layout
+    return val < 0 ? '\u200E' + formatted : formatted;
   }
 };
 

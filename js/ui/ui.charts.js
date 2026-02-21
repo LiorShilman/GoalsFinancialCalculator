@@ -271,7 +271,7 @@ function getChartOptions(labels, totalMonths, goalSeries, goals, totalsCtx) {
               const base = totalsCtx?.baselineNoRate?.[i] || 0;
               const diff = tot - base;
               return [
-                '📍 סוף התוכנית',
+                'סוף התוכנית',
                 `סך בפועל: ${formatCurrency(tot)}`,
                 `סך ללא ריבית: ${formatCurrency(base)}`,
                 `${diff >= 0 ? 'תוספת מצטברת מריבית' : 'פער שלילי'}: ${formatCurrency(Math.abs(diff))}`

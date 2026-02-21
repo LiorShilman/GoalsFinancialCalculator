@@ -87,23 +87,23 @@ export function formatRule72(years) {
   }
   const numYears = parseFloat(years);
   let color = '', icon = '';
-  if (numYears <= 8)       { color = 'var(--success)'; icon = '🚀'; }
-  else if (numYears <= 15) { color = 'var(--warning)'; icon = '⏳'; }
-  else                     { color = 'var(--danger)';  icon = '🐌'; }
+  if (numYears <= 8)       { color = 'var(--success)'; icon = '<i data-lucide="rocket"></i>'; }
+  else if (numYears <= 15) { color = 'var(--warning)'; icon = '<i data-lucide="timer"></i>'; }
+  else                     { color = 'var(--danger)';  icon = '<i data-lucide="snail"></i>'; }
   return `<span style="color:${color};font-weight:600;">${icon} ${years} שנים</span>`;
 }
 
 // פורמט ROI לתצוגה
 export function formatROI(roi, showTooltip = false) {
   const cls = getROIClass(roi);
-  const icons = { 'roi-excellent':'🚀', 'roi-ok':'📈', 'roi-weak':'📊', 'roi-bad':'⚠️' };
+  const icons = { 'roi-excellent':'<i data-lucide="rocket"></i>', 'roi-ok':'<i data-lucide="trending-up"></i>', 'roi-weak':'<i data-lucide="minus"></i>', 'roi-bad':'<i data-lucide="alert-triangle"></i>' };
   const tips  = {
     'roi-excellent': 'מעולה - השקעה מצוינת לטווח ארוך',
     'roi-ok':        'טוב - תשואה סבירה ובטוחה',
     'roi-weak':      'בינוני - כמעט מכסה אינפלציה',
     'roi-bad':       'חלש - לא עוקב אחרי אינפלציה'
   };
-  const icon = icons[cls] || '📊';
+  const icon = icons[cls] || '<i data-lucide="bar-chart-3"></i>';
   const tip  = showTooltip ? ` title="${tips[cls]}"` : '';
   return `<span class="roi-indicator ${cls}"${tip}>${icon} ${roi.toFixed(1)}%</span>`;
 }
